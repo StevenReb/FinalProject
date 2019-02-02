@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron" style="padding-top: 25px;">
+        <h1>Data</h1>
+        <!-- Table displaying table headers -->
+        <table >
+                <tr  class="table-info">
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Building</td>
+                        <td>Room</td>
+                        <td>Check In</td>
+                        <td>Check Out</td>
+                        </tr>
+             <!-- Displaying the information fetched from the database --> 
+            <% print.forEach(function (data) { %>
+
+                <tr  class="table-info">
+                <td><%= data.firstName %></td>
+                <td><%= data.lastName %></td>
+
+                <td><%= data.building %></td>
+                <td><%= data.room %></td>
+                <td style="font-size: 10px"><%= data.checkIn.toUTCString().split(',') %></td>
+                <td style="font-size: 10px"><%= data.checkOut.toUTCString().split(', GMT') %></td>
+
+
+                </tr>
+                <% }) %>
+        </table>
+        <br>
+        <button class="btn btn-primary" onclick="goBack()">Go Back</button>
+
+        <script>
+            function goBack() {
+                window.history.back()
+            }
+            </script>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

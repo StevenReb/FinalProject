@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron" style="padding-top: 25px;">
+        <h3> Check In / Check Out </h3>
+        <br>
+
+            <!-- Radio buttons to select Instructor of Student -->
+            <form action="/checkin" method="POST">
+                <div style="font-size: 20px" class="form-check">
+                    <label class="form-check-label" style="padding-right: 30px;">
+                      <input type="radio" class="form-check-input" name="person" id="optionsRadios1" value="Instructor" checked="checked">
+                      Instructor
+                    </label>
+             
+                </div>
+                <!--  Text fields to fill out -->
+                <br>
+                <input type="text" name="create_id" class="form-control" placeholder="ID" autocomplete="off" required>
+                <br>
+                <input type="text" name="create_first_name" class="form-control" placeholder="First Name" autocomplete="off" required>
+                <br>
+                <input type="text" name="create_last_name" class="form-control" placeholder="Last Name" autocomplete="off" required>
+                <br>
+                <input type="text" name="create_course" class="form-control" placeholder="Course" required>
+                <br>
+                <input type="text" name="create_campus" class="form-control" placeholder="Campus" required>
+                <br>
+                <input type="text" name="create_building" class="form-control" placeholder="Building" required>
+                <br>
+                <input type="text" name="create_room" class="form-control"  placeholder="Room" required>
+                <br>
+
+                <!-- Radio Buttons to select check in or check out -->
+                <div style="font-size: 20px" class="form-check">
+                    <label class="form-check-label" style="padding-right: 30px;">
+                      <input type="radio" class="form-check-input" name="checkInOut" id="optionsRadios2in" value="checkIn" checked="checked">
+                            Check In
+                    </label>
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="checkInOut" id="optionsRadios2out" value="checkOut">
+                          Check Out
+                    </label>  
+                </div>
+                <br>
+                <button class="btn btn-primary">Submit</button>
+                
+                <br>
+                <br>
+        <button class="btn btn-primary" onclick="goBack()">Go Back</button>
+
+        <script>
+            function goBack() {
+                window.history.back()
+            }
+            </script>
+
+            </form>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

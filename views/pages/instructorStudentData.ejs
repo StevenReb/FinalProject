@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron" style="padding-top: 25px;">
+        <h1>Data</h1>
+        <table>
+                <!-- Table headers -->
+                <tr class="table-info">
+                        <td> Room </td>
+                        <td> Instructor</td>
+                        <td> Check In</td>
+                        <td> Student</td>
+                        <td> Check In</td>
+                        <td> Check Out </td>
+                    </tr>
+            <!-- Displaying the data fetched from the databse for students that loged in under an instructor -->
+            <% print.forEach(function (data) { %>
+
+                <tr class="table-info">
+                <td><%= data.room %></td>
+                <td><%= data.Instructor %></td>
+                <td style="font-size: 10px"><%= data.InstructorCheckIn.toUTCString().split(',') %></td>
+                <td><%= data.Student %></td>
+                <td style="font-size: 10px"><%= data.StudentCheckIn.toUTCString().split(',') %></td>
+                <td style="font-size: 10px"><%= data.StudentCheckOut.toUTCString().split(',') %></td>
+
+
+            </tr>
+                <% }) %>
+        </table>
+        <br>
+        <button class="btn btn-primary" onclick="goBack()">Go Back</button>
+
+        <script>
+            function goBack() {
+                window.history.back()
+            }
+            </script>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

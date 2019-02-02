@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron" style="padding-top: 25px;">
+        <h3> Admin Area </h3>
+        <br>
+
+         <!-- Radio buttons to select Instructor of Student -->
+         <form action="" method="GET">
+
+            <input type="submit" name="checkInInstructor" class="btn btn-primary" formaction="/checkInInstructor" value="Instructor Check In / Out">
+            <br>
+
+                <br>
+                <input type="text" name="search_id" class="form-control" id="id"  placeholder="ID" autocomplete="off">
+                <br>
+               
+
+        <!-- Controles for admin to us to display data -->
+            <input type="submit" name="displayAllInstructors" class="btn btn-primary" formaction="/displayAllInstructors" value="Display All Instructors">
+            <input type="submit" name="displayAllStudents" class="btn btn-primary" formaction="/displayAllStudents" value="Display All Students">
+            <input type="submit" name="searchByStudentId" class="btn btn-primary" formaction="/searchById" value="Search Student By ID">
+            <input type="submit" name="allStudentsUnderInstructor" class="btn btn-primary" formaction="/underInstructor" value="Search Students under Instructor">
+           
+            
+
+        </form>
+        
+
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
